@@ -14,6 +14,9 @@ Welcome to Sphinxy's documentation!
 
 The Egyptian Sphinx
 -------------------
+
+Meowth, that's right!
+
 .. image:: _static/meowth-3d.gif
 
 Indices and tables
