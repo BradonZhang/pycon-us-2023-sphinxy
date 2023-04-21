@@ -5,19 +5,24 @@
   </p>
   <ul>
     {%- for item in versions.branches %}
-    <li class="toctree-l1">
-      <a class="reference" href="{{ item.url }}">{{ item.name }}</a>
-    </li>
+      <li class="toctree-l1">
+        <a class="reference" href="{{ item.url }}">{{ item.name }}</a>
+      </li>
     {%- endfor %}
   </ul>
   <p class="caption" role="heading">
     <span class="caption-text">{{ _('Tags') }}</span>
   </p>
   <ul>
+    {%- set patched_versions = {} %}
     {%- for item in versions.tags %}
-    <li class="toctree-l1">
-      <a class="reference" href="{{ item.url }}">{{ item.name }}</a>
-    </li>
+      {%- set minor_version = item.name.split('.')[:2]|join('.') %}
+      {%- set _ = patched_versions.update({minor_version: item}) %}
+    {%- endfor %}
+    {%- for minor_version, item in patched_versions.items()|sort(True) %}
+      <li class="toctree-l1">
+        <a class="reference" href="{{ item.url }}">{{ minor_version }}</a>
+      </li>
     {%- endfor %}
   </ul>
 </div>
