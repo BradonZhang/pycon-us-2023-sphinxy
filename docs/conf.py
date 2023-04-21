@@ -46,4 +46,4 @@ html_sidebars = {
 # https://holzhaus.github.io/sphinx-multiversion/master/configuration.html#
 smv_tag_whitelist = r"^v\d+\.\d+\.\d+$"
 smv_branch_whitelist = r"^main$"
-smv_remote_whitelist = r"^main$"
+smv_remote_whitelist = r"^origin$"
